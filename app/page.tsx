@@ -1,9 +1,7 @@
-import { getTodos } from '@/lib/Todos';
-import TodoCachedApp from './cached/components/TodoCachedApp';
+import React from 'react';
+import TodoApp from './components/TodoApp';
 
-export default async function TodoPage() {
-  const initialTodos = await getTodos();
-
+export default function TodoPage() {
   return (
     <main className="min-h-screen p-6 md:p-10 bg-white text-dark-70">
       <div className="max-w-2xl mx-auto space-y-6">
@@ -14,8 +12,8 @@ export default async function TodoPage() {
             </h1>
           </header>
 
-          {/* Menggunakan LocalStorage / Cache */}
-          <TodoCachedApp initialTodos={initialTodos} />
+          {/* Komponen Utama Todo dengan Integrasi API Database */}
+          <TodoApp />
         </div>
       </div>
     </main>
